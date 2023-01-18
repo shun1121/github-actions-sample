@@ -1,7 +1,11 @@
+// const SUB_DIRECTORY = '/github-actions-sample'
+const SUB_DIRECTORY = process.env.URL_PREFIX ? '/' + process.env.URL_PREFIX : ''
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+module.exports = {
   reactStrictMode: true,
   swcMinify: true,
+  assetPrefix: SUB_DIRECTORY,
+  basePath: SUB_DIRECTORY,
+  trailingSlash: true
 }
-
-module.exports = nextConfig
